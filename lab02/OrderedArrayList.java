@@ -34,61 +34,57 @@ public class OrderedArrayList
     for( int i = 0; i < _size; i++ ) {
       foo += _data.get(i) + ",";
     }
-    if ( foo.length() > 1 )
+    if( foo.length() > 1 )
       //shave off trailing comma
       foo = foo.substring( 0, foo.length()-1 );
     foo += "]";
     return foo;
   }
 
-  public Integer remove( int i )
-  {
-    int oldVal = this.get(i);
-    for( int x = i; x < _size - 1; x++ ) {
-      _data.get(x) = _data.get(x+1);
-    }
-    _size--;
-    return oldVal;
-  }
-
-  public int size()
-  {
-    return _size;
-  }
-
-  public Integer get( int i )
-  {
-    return _data[i];
-  }
-
   // inserts newVal at the appropriate index
   // maintains ascending order of elements
   // uses a linear search to find appropriate index
   public void addLinear(Integer newVal)
-  {    /*-----v-------move-me-down-----------------v--------
-    for(int i=0;i<size();i++){
-      if(_data[i]>newVal){
-        add(i,newVal);
+  {  
+    System.out.println(newVal);
+    System.out.println(_data.size());
+    if (_data.size() == 0) {
+    	_data.add(newVal);
+    	System.out.println(_data);
+    	_size ++;
+    	}
+    else {
+    	int temp = _size;
+        for(int i = 0; i < temp; i++) {
+          if(_data.get(i) >= newVal) {
+            _data.add(i, newVal);
+            i = temp;
+            System.out.println(_data);
+            _size ++;
       }
     }
+    _data.add(newVal);
+    _size ++;
   }
+  }
+  
 
   // main method solely for testing purposes
   public static void main( String[] args )
   {
-
     OrderedArrayList Franz = new OrderedArrayList();
     // testing linear search
-    for( int i = 0; i < 15; i++ )
+    for( int i = 0; i < 5; i++ ) {
       Franz.addLinear( (int)( 50 * Math.random() ) );
+      }
     System.out.println( Franz );
-        /*-----v-------move-me-down-----------------v--------
+    /*-----v-------move-me-down-----------------v--------
     // testing binary search
     Franz = new OrderedArrayList();
     for( int i = 0; i < 15; i++ )
       Franz.addBinary( (int)( 50 * Math.random() ) );
     System.out.println( Franz );
-      =====^====================================^=========*/
+    =====^====================================^=========*/
 
   }//end main()
 
