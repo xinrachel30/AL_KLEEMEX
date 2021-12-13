@@ -11,7 +11,7 @@ public class ALTester {
       _data.add((int)(Math.random() * 20)); //populates _data[i]
     }
   }
-
+//uses a for loop to test whether the values are smaller than the next index value.
   public boolean isSorted() {
     for (int i = 0; i < _data.size() - 1; i++) {
       if (!(_data.get(i) <= _data.get(i+1))) {
