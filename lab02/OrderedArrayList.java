@@ -1,7 +1,7 @@
 // Kleemex -- Lindsay Phung, May Qiu, Xinqing Lin
 // APCS pd07
 // Lab02
-// 2021-12-11
+// 2021-12-13
 
 /**********************************************
  * class OrderedArrayList
@@ -46,11 +46,11 @@ public class OrderedArrayList
   // uses a linear search to find appropriate index
   public void addLinear(Integer newVal)
   {  
-    System.out.println(newVal);
-    System.out.println(_data.size());
+    //System.out.println(newVal);
+    //System.out.println(_data.size());
     if (_data.size() == 0) {
     	_data.add(newVal);
-    	System.out.println(_data);
+    	//System.out.println(_data);
     	_size ++;
     	}
     else {
@@ -59,7 +59,7 @@ public class OrderedArrayList
           if(_data.get(i) >= newVal) {
             _data.add(i, newVal);
             i = temp;
-            System.out.println(_data);
+            //System.out.println(_data);
             _size ++;
       }
     }
