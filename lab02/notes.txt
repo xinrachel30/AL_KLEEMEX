@@ -1,0 +1,13 @@
+Kleemex -- Lindsay Phung, May Qiu, Xinqing Lin
+APCS
+L02: Well Al B. Sorted
+2021-12-13
+time spent: 2.25 hrs
+
+DISCOS:
+- ALTester and OrderedArrayList are independent of each other.
+
+QCC:
+- Initially, code kept returning empty arrays. 
+- _size doesn't increment correctly in addLinear.
+- We encountered the JAVA HEAP SPACE error multiple times... what exactly is it? <something with memory usage>
